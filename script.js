@@ -328,26 +328,26 @@ updateDisplay();
 // Add some sample data for demonstration
 window.addEventListener('load', () => {
     // Set sample quantities to show how it works
-    document.getElementById('qty2000').value = '2';
-    document.getElementById('qty500').value = '3';
-    document.getElementById('qty100').value = '5';
-    document.getElementById('qty50').value = '2';
-    document.getElementById('qty20').value = '10';
-    document.getElementById('qty10').value = '15';
-    document.getElementById('qty5').value = '20';
-    document.getElementById('qty2').value = '25';
-    document.getElementById('qty1').value = '50';
+    document.getElementById('qty2000').value = '0';
+    document.getElementById('qty500').value = '0';
+    document.getElementById('qty100').value = '0';
+    document.getElementById('qty50').value = '0';
+    document.getElementById('qty20').value = '0';
+    document.getElementById('qty10').value = '0';
+    document.getElementById('qty5').value = '0';
+    document.getElementById('qty2').value = '0';
+    document.getElementById('qty1').value = '0';
     
     // Set sample other amounts
-    document.getElementById('otherAmount1').value = '25';
-    document.getElementById('otherQty1').value = '8';
-    document.getElementById('otherAmount2').value = '75';
-    document.getElementById('otherQty2').value = '3';
-    document.getElementById('otherAmount3').value = '150';
-    document.getElementById('otherQty3').value = '2';
+    document.getElementById('otherAmount1').value = '0';
+    document.getElementById('otherQty1').value = '0';
+    document.getElementById('otherAmount2').value = '0';
+    document.getElementById('otherQty2').value = '0';
+    document.getElementById('otherAmount3').value = '0';
+    document.getElementById('otherQty3').value = '0';
     
     // Set sample target amount
-    targetAmountInput.value = '8000';
+    targetAmountInput.value = '0';
     
     // Calculate to show results
     calculateTotalAndDifference();
