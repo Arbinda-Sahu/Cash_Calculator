@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Rupee Cash Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Indian Rupee Calculator</h1>
+            <div class="mode-toggle">
+                <button id="cashMode" class="mode-btn active">Cash Calculator</button>
+                <button id="normalMode" class="mode-btn">Normal Calculator</button>
+            </div>
+        </header>
+
+        <!-- Cash Calculator Mode -->
+        <div id="cashCalculator" class="calculator-section active">
+            <div class="input-section">
+                <h3>Enter Your Currency Quantities:</h3>
+                <div class="currency-inputs">
+                    <div class="currency-row">
+                        <img src="2000 note.jpg"
+                            alt="₹2000 Note" class="currency-thumbnail">
+                        <label>₹2000 Note:</label>
+                        <input type="number" id="qty2000" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="500 note.jpg"
+                            alt="₹500 Note" class="currency-thumbnail">
+                        <label>₹500 Note:</label>
+                        <input type="number" id="qty500" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="200 note.jpg"
+                            alt="₹200 Note" class="currency-thumbnail">
+                        <label>₹200 Note:</label>
+                        <input type="number" id="qty200" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="100 note.jpeg"
+                            alt="₹100 Note" class="currency-thumbnail">
+                        <label>₹100 Note:</label>
+                        <input type="number" id="qty100" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="50 note.jpg"
+                            alt="₹50 Note" class="currency-thumbnail">
+                        <label>₹50 Note:</label>
+                        <input type="number" id="qty50" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="20 note.png"
+                            alt="₹20 Note" class="currency-thumbnail">
+                        <label>₹20 Note:</label>
+                        <input type="number" id="qty20" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="10 note.jpeg"
+                            alt="₹10 Note" class="currency-thumbnail">
+                        <label>₹10 Note:</label>
+                        <input type="number" id="qty10" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="5 note.jpeg"
+                            alt="₹5 Note" class="currency-thumbnail">
+                        <label>₹5 Note:</label>
+                        <input type="number" id="qty5" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="2 note.png"
+                            alt="₹2 Coin" class="currency-thumbnail">
+                        <label>₹2 Coin:</label>
+                        <input type="number" id="qty2" placeholder="0" min="0" step="1">
+                    </div>
+                    <div class="currency-row">
+                        <img src="1 note.png"
+                            alt="₹1 Coin" class="currency-thumbnail">
+                        <label>₹1 Coin:</label>
+                        <input type="number" id="qty1" placeholder="0" min="0" step="1">
+                    </div>
+
+                    <div class="other-amounts-section">
+                        <h4>Other Amounts:</h4>
+                        <div class="other-amount-row">
+                            <label>Other Amount 1:</label>
+                            <div class="input-group">
+                                <input type="number" id="otherAmount1" placeholder="Amount (₹)" min="0" step="1">
+                                <input type="number" id="otherQty1" placeholder="Quantity" min="0" step="1">
+                            </div>
+                        </div>
+                        <div class="other-amount-row">
+                            <label>Other Amount 2:</label>
+                            <div class="input-group">
+                                <input type="number" id="otherAmount2" placeholder="Amount (₹)" min="0" step="1">
+                                <input type="number" id="otherQty2" placeholder="Quantity" min="0" step="1">
+                            </div>
+                        </div>
+                        <div class="other-amount-row">
+                            <label>Other Amount 3:</label>
+                            <div class="input-group">
+                                <input type="number" id="otherAmount3" placeholder="Amount (₹)" min="0" step="1">
+                                <input type="number" id="otherQty3" placeholder="Quantity" min="0" step="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="target-amount-section">
+                    <label for="targetAmount">Target Amount (₹):</label>
+                    <input type="number" id="targetAmount" placeholder="Enter target amount" min="0" step="1">
+                </div>
+
+                <div class="button-group">
+                    <button id="calculateBtn" class="calculate-btn">Calculate Total & Difference</button>
+                    <button id="clearBtn" class="clear-btn">Clear All</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h3>Your Currency Summary:</h3>
+                <div id="denominations" class="denominations-grid"></div>
+                <div class="summary">
+                    <p><strong>Total Notes/Coins:</strong> <span id="totalCount">0</span></p>
+                    <p><strong>Total Amount:</strong> ₹<span id="totalAmount">0</span></p>
+                    <p><strong>Target Amount:</strong> ₹<span id="targetAmountDisplay">0</span></p>
+                    <p><strong>Difference:</strong> ₹<span id="differenceAmount">0</span></p>
+                    <p class="difference-status" id="differenceStatus"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Normal Calculator Mode -->
+        <div id="normalCalculator" class="calculator-section">
+            <div class="calc-display">
+                <input type="text" id="calcInput" readonly>
+            </div>
+            <div class="calc-buttons">
+                <button class="calc-btn operator" data-value="AC">AC</button>
+                <button class="calc-btn operator" data-value="±">±</button>
+                <button class="calc-btn operator" data-value="%">%</button>
+                <button class="calc-btn operator" data-value="/">÷</button>
+
+                <button class="calc-btn" data-value="7">7</button>
+                <button class="calc-btn" data-value="8">8</button>
+                <button class="calc-btn" data-value="9">9</button>
+                <button class="calc-btn operator" data-value="*">×</button>
+
+                <button class="calc-btn" data-value="4">4</button>
+                <button class="calc-btn" data-value="5">5</button>
+                <button class="calc-btn" data-value="6">6</button>
+                <button class="calc-btn operator" data-value="-">-</button>
+
+                <button class="calc-btn" data-value="1">1</button>
+                <button class="calc-btn" data-value="2">2</button>
+                <button class="calc-btn" data-value="3">3</button>
+                <button class="calc-btn operator" data-value="+">+</button>
+
+                <button class="calc-btn zero" data-value="0">0</button>
+                <button class="calc-btn" data-value=".">.</button>
+                <button class="calc-btn operator" data-value="=">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
